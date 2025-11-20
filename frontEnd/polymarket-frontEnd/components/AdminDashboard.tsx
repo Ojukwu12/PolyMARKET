@@ -43,7 +43,7 @@ export default function AdminDashboard() {
       const res = await fetch(refreshUrl, { method: 'POST', headers })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const json = await res.json()
-      setMetrics(prev => ({ ...prev, refresh: json }))
+      setMetrics((prev: any) => ({ ...prev, refresh: json }))
     } catch (err: any) {
       setError(err.message || String(err))
     } finally {
