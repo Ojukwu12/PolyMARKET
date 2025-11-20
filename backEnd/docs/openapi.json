@@ -1,0 +1,45 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Polymarket Backend API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/markets": {
+      "get": {
+        "summary": "Get top markets with sentiment and signal",
+        "responses": {
+          "200": {
+            "description": "List of markets",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "markets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": { "type": ["string", "null"] },
+                          "question": { "type": "string" },
+                          "odds": { "type": ["number", "null"] },
+                          "sentimentScore": { "type": ["number", "null"] },
+                          "sentimentNormalized": { "type": ["number", "null"], "description": "Sentiment normalized to [0,1]" },
+                          "bullishPct": { "type": ["number", "null"], "description": "% of positive Reddit posts" },
+                          "bearishPct": { "type": ["number", "null"], "description": "% of negative Reddit posts" },
+                          "signalStrength": { "type": ["number", "null"] },
+                          "signalLabel": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

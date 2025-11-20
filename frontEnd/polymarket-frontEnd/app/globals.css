@@ -1,0 +1,80 @@
+:root {
+	--bg: #0f172a; /* base slate-900 */
+	--bg-alt: radial-gradient(circle at 20% 20%, #12263f 0%, #0f172a 55%, #0a1222 100%);
+	--bg-soft: linear-gradient(120deg,#0f172a 0%,#11263f 48%,#0b1b30 100%);
+	--card: #101c31;
+	--card-gradient: linear-gradient(135deg, rgba(32,54,92,0.65), rgba(14,24,40,0.85));
+	--muted: #94a3b8;
+	--muted-alt: #7b8aa1;
+	--accent: #06b6d4; /* teal-400 */
+	--accent-2: #7c3aed; /* violet-600 */
+	--accent-warn: #f59e0b;
+	--accent-danger: #ef4444;
+	--text: #e6f0ff;
+	--text-soft: #c7d2e5;
+}
+html,body { padding:0; margin:0; background:var(--bg-alt); color:var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial }
+a { color: var(--accent) }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--bg: #0f172a;
+		--muted: #94a3b8;
+	}
+	html,body { padding:0; margin:0; background:var(--bg); color: #e6f0ff; }
+}
+
+@layer components {
+	.container { @apply max-w-4xl mx-auto px-6 py-6; }
+	.card { @apply p-4 rounded-lg border border-white/5 shadow-card; background: var(--card-gradient); }
+	.badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-white/5 text-[#e6f0ff] }
+	.logo { height:40px; }
+	.muted { @apply text-sm text-[#9aa6bf]; }
+	.btn { @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-gradient-to-r from-teal-400 to-violet-600 text-[#071022] font-semibold; }
+	.table { @apply w-full border-collapse; }
+	.grid-cards { @apply grid gap-4 sm:gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3; }
+	.card-title { @apply text-base md:text-lg font-semibold leading-snug; }
+	.card-meta { @apply text-sm text-[#9aa6bf]; }
+    .skeleton { @apply animate-pulse bg-white/10 rounded; }
+	.json-view { font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+	.json-view .json-key { color: #9cdcfe; }
+	.json-view .json-string { color: #ce9178; }
+	.json-view .json-number { color: #b5cea8; }
+	.json-view .json-bool { color: #dcdcaa; }
+	.card { background: linear-gradient(135deg, rgba(40,48,72,0.65), rgba(28,32,44,0.85)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(6px); box-shadow: 0 4px 16px -4px rgba(0,0,0,0.4); }
+	.card h3 { margin-top: 0; }
+	.badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:0.65rem; letter-spacing:0.5px; text-transform:uppercase; background:linear-gradient(90deg,#6366f1,#7c3aed); color:#fff; box-shadow:0 0 0 1px rgba(255,255,255,0.08); }
+	.muted { color: var(--muted-alt); }
+}
+
+/* Fallback plain CSS for environments without Tailwind build (dev preview) */
+.container { max-width: 980px; margin: 0 auto; padding: 24px; }
+.card { background: var(--card-gradient); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 6px 20px -4px rgba(10,20,34,0.65); }
+.btn { display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:6px; color:#071022; font-weight:600; background: linear-gradient(90deg,#06b6d4,#7c3aed); border:none; cursor:pointer }
+.btn:disabled { opacity:0.6; cursor:not-allowed }
+.muted { color:#9aa6bf; font-size:0.9rem }
+.table { width:100%; border-collapse:collapse }
+.table th, .table td { padding:8px; text-align:left }
+.table tr + tr { border-top: 1px solid rgba(255,255,255,0.03) }
+.logo { height:40px }
+
+/* Responsive grid fallback */
+.grid-cards { display:grid; grid-template-columns: 1fr; gap:16px }
+@media (min-width: 640px) { .grid-cards { gap:20px; grid-template-columns: repeat(2,1fr) } }
+@media (min-width: 1024px) { .grid-cards { gap:24px; grid-template-columns: repeat(3,1fr) } }
+.card-title { font-size:1.05rem; font-weight:600; line-height:1.3 }
+@media (min-width: 768px) { .card-title { font-size:1.125rem } }
+.card-meta { font-size:0.9rem; color:#9aa6bf }
+
+/* Skeleton fallback (when Tailwind isn't building) */
+.skeleton { background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12), rgba(255,255,255,0.06)); background-size: 200% 100%; border-radius: 6px; animation: skeleton-shimmer 1.2s ease-in-out infinite; }
+@keyframes skeleton-shimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
+
+/* small badge color variants */
+.badge-pos { background: linear-gradient(90deg,#d1fae5,#86efac); color:#042018 }
+.badge-neg { background: linear-gradient(90deg,#fee2e2,#fecaca); color:#2b0202 }
+.badge-neu { background: linear-gradient(90deg,#eff6ff,#bfdbfe); color:#02244b }
+

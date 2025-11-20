@@ -1,0 +1,63 @@
+# Root-level .gitignore for Polymarket Dashboard monorepo
+# This works alongside the existing .gitignore files in frontend/ and backend/
+
+# Dependencies - ignore node_modules in all subdirectories
+**/node_modules/
+
+# Environment variables - ignore at all levels
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# Build outputs
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+backend/dist/
+backend/build/
+
+# Log files
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
+
+# OS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Testing
+**/coverage/
+**/.nyc_output/
+
+# Misc
+*.log
+.cache/
+tmp/
+temp/

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "m1",
+    "question": "Will Bitcoin be above $60k at the end of 2025?",
+    "outcomes": [
+      { "name": "Yes", "probability": 0.65 },
+      { "name": "No", "probability": 0.35 }
+    ],
+    "lastTradePrice": 0.65
+  },
+  {
+    "id": "m2",
+    "question": "Will Ethereum reach $5k in 2025?",
+    "outcomes": [
+      { "name": "Yes", "probability": 0.30 },
+      { "name": "No", "probability": 0.70 }
+    ],
+    "lastTradePrice": 0.30
+  },
+  {
+    "id": "m3",
+    "question": "Will the Federal Reserve cut rates by end of 2025?",
+    "outcomes": [
+      { "name": "Yes", "probability": 0.40 },
+      { "name": "No", "probability": 0.60 }
+    ],
+    "lastTradePrice": 0.4
+  },
+  {
+    "id": "m4",
+    "question": "Will Apple release a new product category by 2026?",
+    "outcomes": [
+      { "name": "Yes", "probability": 0.20 },
+      { "name": "No", "probability": 0.80 }
+    ],
+    "lastTradePrice": 0.2
+  },
+  {
+    "id": "m5",
+    "question": "Will Amazon's revenue exceed $500B next year?",
+    "outcomes": [
+      { "name": "Yes", "probability": 0.55 },
+      { "name": "No", "probability": 0.45 }
+    ],
+    "lastTradePrice": 0.55
+  }
+]

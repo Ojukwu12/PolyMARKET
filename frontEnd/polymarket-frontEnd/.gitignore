@@ -1,0 +1,70 @@
+# .gitignore for a lightweight Node.js + Express + vanilla JS frontend project
+# Tailored for dependencies like express, node-fetch, sentiment, and typical tooling
+
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Runtime and environment files
+.env
+.env.local
+.env.*.local
+.env.test
+
+# Mac & Windows
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+out/
+public/build/
+
+# Next.js (if used later)
+.next/
+
+# Parcel / Vite / Rollup caches
+.parcel-cache/
+.vite/
+.rollup.cache/
+
+# Coverage and test output
+coverage/
+.nyc_output/
+
+# Temporary files
+.cache/
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS generated files
+ehthumbs.db
+Icon?
+
+# Misc
+.serverless/
+.vercel/
+.netlify/
+
+# Local main env file used for development (do NOT commit)
+main.envs
+
+# Ignore backend and local env files
+backEnd/.env
+backEnd/main.envs
